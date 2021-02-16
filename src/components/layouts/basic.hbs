@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  {{#if page_title}}
+    <title>{{page_title}}</title>
+  {{else}}
+    <title>{{site_title}}</title>
+  {{/if}}
+</head>
+
+<body class="min-h-screen flex flex-col">
+  <header>
+    {{#> header-block}}
+      {{> nav/topnav}}
+    {{/header-block}}
+  </header>
+  <main class="xl:container mx-auto flex-grow">
+    {{#> main-block }}
+
+    {{/main-block}}
+  </main>
+  <footer class=" bg-black text-white">
+    <section class="flex flex-col md:flex-row justify-between">
+    {{> footer/footer}}
+    </section>
+  </footer>
+  <script src="bundle.js"></script>
+  {{#> scripts-block}}
+  {{/scripts-block}}
+</body>
+
+</html>

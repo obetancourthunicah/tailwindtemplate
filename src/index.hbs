@@ -1,0 +1,14 @@
+{{!-- Este es un comentario no aparece en el html final --}}
+{{!--  define que master page va a utilizar en este es layoute/basic --}}
+{{#> layouts/basic page_title="Inicio"}}
+  {{!-- el #*inline "nombre de bloque"
+    define donde incorporar en el layout el codigo siguiente
+   --}}
+  {{#*inline "main-block"}}
+    <section class="p-8 relative">
+      {{!-- todas las imagenes deben estar en img_src y referenciadas con imgs/imagen.ext --}}
+      <img alt="cat gourmet" src="imgs/g593.png"  class="p-8"/>
+      <h1 class="absolute object-right-bottom">Start Coding</h1>
+    </section>
+  {{/inline}}
+{{/layouts/basic}}
