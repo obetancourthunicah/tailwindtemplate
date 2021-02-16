@@ -1,6 +1,8 @@
 const path = require("path");
 const HandlebarsPlugin = require("handlebars-webpack-plugin");
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 module.exports = {
   entry: "./src/index.js",
   output: {
@@ -12,20 +14,45 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          "style-loader",
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: path.resolve(__dirname, '../dist/css')
+            }
+          },
           { loader: "css-loader", options: { importLoaders: 1 } },
           "postcss-loader",
         ],
       },
     ],
   },
-
+  optimization: {
+    minimize: true,
+    minimizer: [
+      // For webpack@5 you can use the `...` syntax to extend existing minimizers (i.e. `terser-webpack-plugin`), uncomment the next line
+      // `...`,
+      new CssMinimizerPlugin(),
+    ],
+  },
   devServer: {
     watchContentBase: true,
     contentBase: path.resolve(__dirname, "dist"),
     open: true,
   },
   plugins:[
+    new MiniCssExtractPlugin(
+      {
+        insert: function (linkTag) {}
+      }
+    ),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'img_src/',
+          to: 'imgs',}
+      ]
+    }
+    ),
     new HandlebarsPlugin({
       // path to hbs entry file(s). Also supports nested directories if write path.join(process.cwd(), "app", "src", "**", "*.hbs"),
       entry: path.join(process.cwd(), "src", "*.hbs"),

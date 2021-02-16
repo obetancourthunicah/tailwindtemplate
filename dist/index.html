@@ -4,85 +4,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="main.css"/>
     <title>Inicio</title>
 </head>
 
-<body>
+<body class="min-h-screen flex flex-col">
   <header>
-    <div class="relative bg-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
-        <div class="flex justify-between items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
-          <div class="flex justify-start lg:w-0 lg:flex-1">
-            <a href="#">
-              <span class="sr-only">Workflow</span>
-              <img class="h-8 w-auto sm:h-10" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
-            </a>
-          </div>
-          <nav class="hidden md:flex space-x-10" id="menu">
-            <div class="relative">
-              <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-              <button type="button"
-                class="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                <span>Solutions</span>
+      <div class="relative bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+          <div class="flex justify-between items-start md:items-center border-b-2 border-gray-100 py-6 md:justify-start md:space-x-10">
+            <div class="flex justify-start lg:w-0 lg:flex-1">
+              <a href="#">
+                <span class="sr-only">Workflow</span>
+                <img class="h-8 w-auto sm:h-10 rounded-full" src="https://placehold.it/100x100" alt="">
+              </a>
+            </div>
+            <nav class="hidden block md:flex" id="menu">
+              <a href="index.html" class="mx-8 md:mx-0 text-base font-medium text-gray-500 block px-3 py-2 hover:text-gray-900">
+                Inicio
+              </a>
+              <a href="#" class="mx-8 md:mx-0 text-base font-medium text-gray-500 block px-3 py-2 hover:text-gray-900">
+                Precios
+              </a>
+              <a href="contact.html" class="mx-8 md:mx-0 text-base font-medium text-gray-500 block px-3 py-2 hover:text-gray-900">
+                Ayuda
+              </a>
+              <div class="block md:relative py-2 px-3 mx-8 md:mx-0" >
+                <button type="button" id=morebtn
+                  class="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <span>Más</span>
+                </button>
+              </div>
+            </nav>
+            <div id="secmenu" class="hidden block md:flex md:flex-row items-center md:justify-end md:flex-1 lg:w-0">
+              <a href="#"
+                class="w-100 md:ml-6 mb-4 md:mb-0 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-gray bg-gray-200 hover:bg-gray-300">
+                Iniciar
+              </a>
+              <a href="#"
+                class="w-100 md:ml-6 mb-4 md:mb-0 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
+                Crear Cuenta
+              </a>
+            </div>
+            <div class="-mr-2 -my-2 md:hidden">
+              <button type="button" id="menubtn"
+                class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <span class="sr-only">Open menu</span>
+                <svg class="h-6 w-6" id="openSVG" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                  aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg class="h-6 w-6 hidden" id="closeSVG"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
               </button>
             </div>
-    
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-              Pricing
-            </a>
-            <a href="#" class="text-base font-medium text-gray-500 hover:text-gray-900">
-              Docs
-            </a>
-    
-            <div class="relative">
-              <!-- Item active: "text-gray-900", Item inactive: "text-gray-500" -->
-              <button type="button"
-                class="group bg-white rounded-md text-gray-500 inline-flex items-center text-base font-medium hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                <span>More</span>
-              </button>
-            </div>
-          </nav>
-          <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <a href="#" class="whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900">
-              Sign in
-            </a>
-            <a href="#"
-              class="ml-8 whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700">
-              Sign up
-            </a>
-          </div>
-          <div class="-mr-2 -my-2 md:hidden">
-            <button type="button" id="menubtn"
-              class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-              <span class="sr-only">Open menu</span>
-              <!-- Heroicon name: outline/menu -->
-              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
           </div>
         </div>
       </div>
-    </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", function(){
-        let menu = document.getElementById("menu");
-        document.getElementById("menubtn").addEventListener("click", 
-          function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            menu.classList.toggle("hidden");
-          }
-        );
-      })
-    </script>
+      <script>
+        document.addEventListener("DOMContentLoaded", function(){
+          let menu = document.getElementById("menu");
+          let secmenu = document.getElementById("secmenu");
+          let closeSVG = document.getElementById("closeSVG");
+          let openSVG = document.getElementById("openSVG");
+      
+          document.getElementById("menubtn").addEventListener("click", 
+            function(e){
+              e.preventDefault();
+              e.stopPropagation();
+              menu.classList.toggle("hidden");
+              secmenu.classList.toggle("hidden");
+              closeSVG.classList.toggle("hidden");
+              openSVG.classList.toggle("hidden");
+            }
+          );
+        })
+      </script>
   </header>
-  <main>
-
+  <main class="xl:container mx-auto flex-grow">
+    <section class="p-8 relative">
+      <img alt="cat gourmet" src="imgs/g593.png"  class="p-8"/>
+      <h1 class="absolute object-right-bottom">Start Coding</h1>
+    </section>
   </main>
-  <footer>
-
+  <footer class=" bg-black text-white">
+    <section class="flex flex-col md:flex-row justify-between">
+    <section class="flex flex-col justify-between items-center md:w-2/6 p-8 order-1">
+      <a href="" class="flex flex-row items-center justify-start my-1"><img src="https://placehold.it/64x64" alt=""><span class="ml-4">Social 1</span></a>
+      <a href="" class="flex flex-row items-center justify-start my-1"><img src="https://placehold.it/64x64" alt=""><span class="ml-4">Social 2</span></a>
+      <a href="" class="flex flex-row items-center justify-start my-1"><img src="https://placehold.it/64x64" alt=""><span class="ml-4">Social 3</span></a>
+    </section>
+    <section class="flex flex-col justify-between items-center p-8 md:w-2/6 order-3 md:order-2">
+      Todos los Derechos Reservados 2021
+    </section>
+    <section class="flex flex-col justify-between items-center p-8 md:w-2/6 order-2 md:order-3">
+      <span></span>
+    </section>
+    </section>
   </footer>
   <script src="bundle.js"></script>
 </body>
