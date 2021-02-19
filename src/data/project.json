@@ -1,3 +1,56 @@
 {
-  "site_title":"TailWind HandleBars BoilerPlate"
+  "site_title":"Mi Página",
+  "categoria":{
+    "comestibles":{
+      "title":"Comestibles",
+      "productos": [
+        {
+          "title":"Producto 1",
+          "uri":"producto1.html",
+          "img":"https://placehold.it/150x150"
+        },
+        {
+          "title":"Producto 2",
+          "uri":"producto2.html",
+          "img":"https://placehold.it/150x150"
+        },
+        {
+          "title":"Producto 3",
+          "uri":"producto3.html",
+          "img":"https://placehold.it/150x150"
+        },
+        {
+          "title":"Producto 4",
+          "uri":"producto4.html",
+          "img":"https://placehold.it/150x150"
+        }
+      ]
+    },
+    "nacionales":{
+      "title":"Nacionales",
+      "productos": [
+        {
+          "title":"Producto 11",
+          "uri":"producto1.html",
+          "img":"https://placehold.it/150x150"
+        },
+        {
+          "title":"Producto 12",
+          "uri":"producto2.html",
+          "img":"https://placehold.it/150x150"
+        },
+        {
+          "title":"Producto 13",
+          "uri":"producto3.html",
+          "img":"https://placehold.it/150x150"
+        },
+        {
+          "title":"Producto 14",
+          "uri":"producto4.html",
+          "img":"https://placehold.it/150x150"
+        }
+      ]
+    }
+  }
+
 }

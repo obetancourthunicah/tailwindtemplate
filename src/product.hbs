@@ -1,0 +1,25 @@
+{{#> layouts/basic}}
+  {{#*inline "main-block" }}
+    <h1>Esto es el nuevo Cuerpo de Contenido</h1>
+    <section class="flex flex-wrap justify-between container align-center">
+    {{#> cards/cards card_title="Tarjeta 1"
+        card_text="Esto es un parrafo"}}
+    {{/cards/cards}}
+    {{#> cards/cards card_title="Tarjeta 2"}}{{/cards/cards}}
+    {{#> cards/cards card_title="Tarjeta 3"}}{{/cards/cards}}
+    </section>
+
+    <section class="flex  flex-wrap justify-between container">
+      {{#each categoria.comestibles.productos}}
+        {{#> cards/cards card_title=title card_uri=uri}}
+        {{/cards/cards}}
+      {{/each}}
+    </section>
+    <section class="flex flex-wrap justify-between container">
+      {{#each categoria.nacionales.productos}}
+      {{#> cards/cards card_title=title card_uri=uri}}
+      {{/cards/cards}}
+      {{/each}}
+    </section>
+  {{/inline}}
+{{/layouts/basic}}
